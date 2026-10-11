@@ -331,7 +331,7 @@ static void reconcile_battery(uint8_t source, uint8_t level) {
         static int64_t last_log_ms[ESB_LINK_PIPE_MAX];
         int64_t now = k_uptime_get();
 
-        if (now - last_log_ms[source] >= 5000) {
+        if (now - last_log_ms[source] >= 500) {
             last_log_ms[source] = now;
             LOG_INF("peripheral %u battery %u%%", source, level);
         }
